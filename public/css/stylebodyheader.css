@@ -13,15 +13,6 @@
     margin-top: 15px;
 }
 
-body.dark-theme .container-fluid.bg-primary {
-    background: linear-gradient(to right, #1e1e1e, #3a3a3a, #4a4a4a); /* Colores más oscuros */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ajusta la sombra para que sea más sutil en modo oscuro */
-}
-
-body.dark-theme .no-bold {
-    color: #ffffff; /* Cambia el color del texto a blanco */
-}
-
 #sesion
 {
     margin-right: 15px;
@@ -29,20 +20,13 @@ body.dark-theme .no-bold {
     font-weight: bold;
 }
 
-#clock
+#dateTime
 {
     margin-right: 10px;
     font-weight: bold;
+    text-align: center;
 }
-
-#date 
-{
-    font-weight: bold;
-    margin-right: 10px;
-}
-
 /***** End Header *****/
-
 
 /***** Notification *****/ 
 #notificaciones 
@@ -188,38 +172,3 @@ body.dark-theme .no-bold {
 
 /***** End Card Header*****/
 
-/***** night mode *****/ 
-.darktheme
-{
-    background-color: #7d3c98;
-    width: 40px; 
-    height: 40px;
-    padding: 5px; 
-    border-radius: 50%;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    cursor: pointer; 
-    transition: background-color 0.5s ease;
-    border: none;
-    box-shadow: none;
-    
-}
-
-.darktheme i
-{
-    color: white; 
-    font-size: 20px;
-    transition: color 0.5s ease; 
-}
-
-.darktheme:hover
-{
-    background-color: white;  
-}
-
-.darktheme:hover i
-{
-    color: #7d3c98;  
-}
- /***** End night mode *****/

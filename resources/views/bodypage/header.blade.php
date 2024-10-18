@@ -5,8 +5,7 @@
                 </div>
                 <div class="col-md-6"> 
                     <div class="d-flex align-items-center justify-content-end">
-                    <div id="date">00-00-00</div>
-                    <div id="clock">00:00:00</div>
+                      <div id="dateTime" class="me-2">00-00-00 00:00:00</div>
                         <!-- ========== Start Modal ========== -->
                         <button type="button" id="modalbutton" class="btn ms-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                           <span class="icon"><i class='bx bxs-alarm'></i></span>

@@ -14,32 +14,135 @@ body
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+/***** Dark Theme *****/ 
 body.dark-theme 
 {
-    background-color: #273746;
-    color: white;
+    background-color: #18191A;
+    color: #ffffff;
 }
 
-body.dark-theme .darktheme 
+body.dark-theme .container-fluid.bg-primary 
 {
-    background-color: #34495e;
+    background: linear-gradient(to right, #1e1e1e, #3a3a3a, #4a4a4a); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
 }
 
-body.dark-theme .darktheme i {
-    color: #ecf0f1; 
+body.dark-theme .no-bold {
+    color: #ffffff;
+}
+
+
+body.dark-theme .darktheme,
+body.dark-theme .sidebar,
+body.dark-theme .card-header,
+body.dark-theme .card-footer 
+{
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+body.dark-theme .card 
+{
+    background-color: #2a2a2a;
+}
+
+body.dark-theme .darktheme i,
+body.dark-theme .menu a,
+body.dark-theme .menu a i 
+{
+    color: #ffffff;
 }
 
 body.dark-theme .darktheme:hover 
 {
-    background-color: #7d3c98; 
+    background-color: #7d3c98;
 }
 
 body.dark-theme .darktheme:hover i 
 {
-    color: white; 
+    color: white;
 }
 
-footer {
+body.dark-theme .menu li 
+{
+    background: transparent;
+}
+
+body.dark-theme .menu li:hover,
+body.dark-theme .menu li.active 
+{
+    background-color: #3a3a3a;
+}
+
+
+.darktheme 
+{
+    background-color: #7d3c98;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    margin: 150% 0 0 10%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    box-shadow: none;
+}
+
+.darktheme i {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.darktheme:hover {
+    background-color: white;
+}
+
+.darktheme:hover i {
+    color: #7d3c98;
+}
+ /***** End Dark Theme *****/
+
+ .camerabanner
+ {
+     background-color: #7d3c98;
+     width: 40px;
+     height: 40px;
+     padding: 5px;
+     margin: -60% 0 0 100%;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+     border: none;
+     box-shadow: none;
+ }
+
+ .camerabanner i 
+ {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.camerabanner:hover 
+{
+    background-color: white;
+}
+
+.camerabanner:hover i 
+{
+    color: #7d3c98;
+}
+
+footer 
+{
     text-align: center; 
     margin-top: 100px;  
     padding: 10px;     

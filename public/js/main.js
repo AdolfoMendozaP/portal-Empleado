@@ -1,13 +1,60 @@
 //header - clock//
+let selectedTimeZone = localStorage.getItem('selectedTimeZone') || 'America/Mexico_City';
+let selectedTimeZoneText = localStorage.getItem('selectedTimeZoneText') || 'Hora Estacional';
+
 function updateDateTime() {
     const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const dateString = now.toLocaleDateString('es-ES', options);
-    document.getElementById('date').textContent = `${dateString}`;
+    const optionsDate = {
+        timeZone: selectedTimeZone,
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    };
+    const optionsTime = {
+        timeZone: selectedTimeZone,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+    };
+    const dateString = now.toLocaleDateString('es-ES', optionsDate);
+    const timeString = now.toLocaleTimeString('es-ES', optionsTime);
+
+    document.getElementById('dateTime').textContent = `${dateString} ${timeString}`;
+    document.getElementById('selectedTimeZoneText').textContent = selectedTimeZoneText;
+}
+
+function changeTimeZone(timeZone, timeZoneName) {
+    selectedTimeZone = timeZone;
+    selectedTimeZoneText = `Hora Estacional - ${timeZoneName}`;
+    localStorage.setItem('selectedTimeZone', timeZone);
+    localStorage.setItem('selectedTimeZoneText', selectedTimeZoneText);
+    updateDateTime();
+}
+
+function detectUserLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            fetch(`https://timezoneapi.io/api/ip/?token=YOUR_API_KEY`)
+                .then(response => response.json())
+                .then(data => {
+                    const userTimeZone = data.data.timezone.id;
+                    changeTimeZone(userTimeZone, userTimeZone);
+                })
+                .catch(() => {
+                    console.log('No se pudo detectar la zona horaria automáticamente.');
+                });
+        });
+    } else {
+        console.log('La geolocalización no está disponible en este navegador.');
+    }
+}
+
+if (!localStorage.getItem('selectedTimeZone')) {
+    detectUserLocation();
+} else {
+    updateDateTime();
 }
 
 setInterval(updateDateTime, 1000);
@@ -41,8 +88,6 @@ function generateCalendar() {
         ["D", "L", "M", "M", "J", "V", "S"].forEach((day, index) => {
             const th = document.createElement("th");
             th.textContent = day;
-
-            // Resaltar los sábados y domingos en el encabezado
             if (index === 5 || index === 6) {
                 th.classList.add("weekend-header");
             }
@@ -67,12 +112,10 @@ function generateCalendar() {
             const date = new Date(year, month, day);
             const dayOfWeek = date.getDay();
 
-            // Resaltar la fecha actual con colores invertidos
             if (year === today.getFullYear() && month === currentMonth && day === currentDate) {
                 cell.classList.add("highlight-today");
             }
 
-            // Resaltar sábados (día 6) y domingos (día 0) con color lila
             if (dayOfWeek === 6 || dayOfWeek === 0) {
                 cell.classList.add("weekend-day");
             }
@@ -101,10 +144,19 @@ window.onload = generateCalendar;
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
 //DarkTheme//
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() 
+{
     const button = document.querySelector('.darktheme');
+    if (localStorage.getItem('dark-theme') === 'enabled') {
+        document.body.classList.add('dark-theme');
+    }
 
     button.addEventListener('click', function() {
         document.body.classList.toggle('dark-theme');
+        if (document.body.classList.contains('dark-theme')) {
+            localStorage.setItem('dark-theme', 'enabled');
+        } else {
+            localStorage.removeItem('dark-theme');
+        }
     });
 });

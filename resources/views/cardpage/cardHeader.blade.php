@@ -49,4 +49,7 @@
    <button type="button" class="darktheme" >
    <i class="fa-solid fa-moon"></i>
    </button>
+   <button type="button" class="camerabanner" >
+   <i class='bx bxs-camera' ></i>
+   </button>
 </div>
