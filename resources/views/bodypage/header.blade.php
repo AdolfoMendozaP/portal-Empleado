@@ -1,60 +1,45 @@
-<!-- Encabezado -->
-<div class="container-fluid bg-primary text-light py-3">
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <h2 class="no-bold">Portal del Empleado</h2>
-        </div>
-        <div class="col-md-6 text-md-end"> 
-            <div class="d-flex align-items-center justify-content-end"> 
-                <div class="d-flex align-items-center ms-4"> 
-                <i class="fas fa-bell"></i>
-                <img src="https://w7.pngwing.com/pngs/981/645/png-transparent-default-profile-united-states-computer-icons-desktop-free-high-quality-person-icon-miscellaneous-silhouette-symbol-thumbnail.png" alt="" class="rounded-circle" width="30">
-                <span class="ms-2">John Doe</span>
+<link rel="stylesheet" href="{{ asset('css/stylebodyheader.css') }}">
+<div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="no-bold">Portal</h2>
                 </div>
-            </div>
-        </div>
-    </div>
+                <div class="col-md-6"> 
+                    <div class="d-flex align-items-center justify-content-end">
+                    <div id="date">00-00-00</div>
+                    <div id="clock">00:00:00</div>
+                        <!-- ========== Start Modal ========== -->
+                        <button type="button" id="modalbutton" class="btn ms-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                          <span class="icon"><i class='bx bxs-alarm'></i></span>
+                           <span class="text">Checador</span>
+                        </button>
+                        <!-- ========== Start Modal ========== -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                           @include('modalpage.modalAs')
+                          </div>
+                          <!-- ========== End Modal ========== -->
+                        <!-- ========== End Modal ========== -->
 
-    <!-- Tarjetas blancas -->
-    <div class="container mt-5">
+                        <div class="d-flex align-items-center ms-4">
+                            <div class="dropdown">
+                            <button id="notificaciones" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                               <a href="#"><i class="fas fa-bell"></i></a>
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><button class="dropdown-item" type="button">Action</button></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li class="dropdown-item">Separated link</li>
+                            </ul>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center ms-4" id="sesion">
+                            <span class="ms-2" id="text">John Doe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <div class="container mt-4">
         <div class="row">
-            <div class="col-md-3">
-                <div class="card bg-white">
-                    <div class="card-body">
-                        <h5 class="card-title text-secondary">PUESTO</h5>
-                        <p class="card-text"><strong>#</strong></p>
-                        <p class="card-text text-secondary">#</p>
-                    </div>
-                    <div class="card-icon">
-                        <i class="fas fa-id-card-alt text-danger"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card bg-white">
-                    <div class="card-body">
-                        <h5 class="card-title text-secondary">HORARIO</h5>
-                        <p class="card-text"><strong>#</strong></p>
-                        <p class="card-text text-secondary">Matutino</p>
-                    </div>
-                    <div class="card-icon">
-                        <i class="fas fa-clock text-orange"></i> 
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card bg-white">
-                    <div class="card-body">
-                        <h5 class="card-title text-secondary">PENDIENTES</h5>
-                        <p class="card-text"><strong>#</strong></p>
-                        <p class="card-text text-secondary">#</p>
-                    </div>
-                    <div class="card-icon">
-                        <i class="fas fa-file text-yellow"></i>
-                    </div>
-                </div>
-               </div>
+            @include('cardpage.cardHeader')
             </div>
         </div>
-   </div>
- 

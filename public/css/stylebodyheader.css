@@ -1,0 +1,225 @@
+/***** Header *****/ 
+.container-fluid.bg-primary 
+{
+    background: linear-gradient(to right, #1e94f5, #bc96f1, #cb7dea);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.no-bold 
+{
+    font-weight: bolder;
+    font-size: 20px; 
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+body.dark-theme .container-fluid.bg-primary {
+    background: linear-gradient(to right, #1e1e1e, #3a3a3a, #4a4a4a); /* Colores más oscuros */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ajusta la sombra para que sea más sutil en modo oscuro */
+}
+
+body.dark-theme .no-bold {
+    color: #ffffff; /* Cambia el color del texto a blanco */
+}
+
+#sesion
+{
+    margin-right: 15px;
+    padding: 10px 5px;
+    font-weight: bold;
+}
+
+#clock
+{
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#date 
+{
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/***** End Header *****/
+
+
+/***** Notification *****/ 
+#notificaciones 
+{
+    background-color: #7d3c98;
+    width: 40px; 
+    height: 40px;
+    padding: 5px; 
+    border-radius: 50%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+    transition: background-color 0.5s ease;
+    border: none;
+}
+
+.dropdown-toggle::after
+{
+    display: none;
+}
+
+#notificaciones a 
+{
+    color: white; 
+    font-size: 20px;
+    transition: color 0.5s ease; 
+}
+
+#notificaciones:hover 
+{
+    background-color: white; 
+}
+
+#notificaciones:hover a 
+{
+    color: #7d3c98; 
+}
+
+/***** End Notification*****/
+
+
+/***** Modal Button *****/ 
+#modalbutton 
+{
+    box-shadow: none;
+    background-color: #7d3c98;
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.5s ease, padding 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+#modalbutton .icon 
+{
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-right: 10px;
+    opacity: 1; 
+}
+
+#modalbutton .text 
+{
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#modalbutton:hover 
+{
+    box-shadow: none;
+    color: #7d3c98;
+    background-color: white;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+#modalbutton:hover .icon 
+{
+    opacity: 0; 
+    transform: translateX(-10px); 
+}
+
+#modalbutton:hover .text 
+{
+    opacity: 1; 
+    transform: translateX(0);
+}
+/***** End Modal Button *****/
+
+
+/***** Card Header*****/
+.card 
+{
+    position: relative;
+    border: none;
+    box-shadow: none;
+}
+
+.card-icon 
+{
+    position: absolute;
+    top: 0px; 
+    right: 10px; 
+    font-size: 25px;
+    color: black;
+}
+
+.card-body 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+    height: auto; 
+}
+
+.card-title 
+{
+    font-size: 17px; 
+    margin-bottom: 0; 
+    border: none;
+}
+
+.card-footer
+{
+    font-size: 13px;
+}
+
+/*
+.card-text 
+{
+    font-size: 15px;
+}
+
+.card-text:last-child 
+{
+    align-self: flex-start;
+}
+*/
+
+/***** End Card Header*****/
+
+/***** night mode *****/ 
+.darktheme
+{
+    background-color: #7d3c98;
+    width: 40px; 
+    height: 40px;
+    padding: 5px; 
+    border-radius: 50%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+    transition: background-color 0.5s ease;
+    border: none;
+    box-shadow: none;
+    
+}
+
+.darktheme i
+{
+    color: white; 
+    font-size: 20px;
+    transition: color 0.5s ease; 
+}
+
+.darktheme:hover
+{
+    background-color: white;  
+}
+
+.darktheme:hover i
+{
+    color: #7d3c98;  
+}
+ /***** End night mode *****/

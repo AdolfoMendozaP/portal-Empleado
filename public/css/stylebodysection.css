@@ -1,0 +1,120 @@
+/* Estilo para el contenedor blanco */
+.bg-cream 
+{
+    max-width: 1100px; 
+    margin: 0 auto; 
+    border: 1px solid rgb(247, 237, 237); 
+    padding: 20px; 
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* Estilo para "Ausencia y Retardos" */
+.container-fluid.bg-cream h2 {
+    font-size: 22px; 
+    font-weight: 500;
+}
+
+.info-text {
+    text-align: left; 
+    font-size: 14px; 
+    margin-bottom: 0;
+    margin-left: 0; 
+    padding-left: 0; 
+    display: inline-block; 
+    width: auto; 
+}
+
+/* Estilo para el botón "Sincronizar" */
+.btn-gray-light {
+    background-color: #bdb9b9dc !important; 
+    border-radius: 10px !important; 
+    color: #333 !important; 
+}
+
+.btn-gray-light:hover 
+{
+    background-color: #ddd !important; 
+}
+
+/* Estilos para los calendarios */
+.container-calendar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 20px; /* Espacio entre los calendarios */
+}
+
+.calendar {
+    border: 1px solid #f7eded;
+    padding: 5px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.calendar h3 {
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    margin: 0;
+    font-size: 14px;
+}
+
+.calendar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th,
+.calendar td {
+    border: 1px solid #f7eded;
+    padding: 3px;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Estilos para los días de la semana */
+.calendar th {
+    background-color: #f7f7f7;
+    color: #555;
+}
+
+/* Estilos para el mes de enero */
+.calendar h3 {
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Estilos para los números de los días */
+.calendar td {
+    color: #000;
+}
+
+/* Estilos para los días de la semana en gris */
+.calendar th {
+    color: #555;
+}
+
+.highlight-today 
+{
+    background-color: #5dade2;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #fff;
+}
+
+.weekend-day {
+    background-color: #d8b2d8;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Resaltar el encabezado de sábados y domingos */
+.weekend-header {
+    background-color: #d8b2d8;
+    color: #fff;
+}
