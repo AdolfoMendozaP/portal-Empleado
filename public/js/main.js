@@ -60,6 +60,45 @@ if (!localStorage.getItem('selectedTimeZone')) {
 setInterval(updateDateTime, 1000);
 updateDateTime();
 
+// Calendar - DaysHolidays//
+const diasFestivosMexico = {
+    "enero": [
+        { "nombre": "Año Nuevo", "fecha": "1" },
+        { "nombre": "Día de los Reyes Magos", "fecha": "6" }
+    ],
+    "febrero": [
+        { "nombre": "Día de la Constitución", "fecha": "5" },
+        { "nombre": "Día del amor y la amistad", "fecha": "14" },
+        { "nombre": "Día de la Bandera", "fecha": "24" }
+    ],
+    "marzo": [
+        { "nombre": "Natalicio de Benito Juárez", "fecha": "21" }
+    ],
+    "abril": [
+        { "nombre": "Día del Niño", "fecha": "30" }
+    ],
+    "mayo": [
+        { "nombre": "Día del Trabajador", "fecha": "1" },
+        { "nombre": "Día de la Batalla de Puebla", "fecha": "5" },
+        { "nombre": "Día de las Madres", "fecha": "10" }
+    ],
+    "septiembre": [
+        { "nombre": "Día de la Independencia", "fecha": "16" }
+    ],
+    "octubre": [
+        { "nombre": "Halloween", "fecha": "31" }
+    ],
+    "noviembre": [
+        { "nombre": "Día de los Santos Difuntos", "fecha": "1" },
+        { "nombre": "Día de los Muertos", "fecha": "2" },
+        { "nombre": "Día de la Revolución", "fecha": "20" }
+    ],
+    "diciembre": [
+        { "nombre": "Dia de la Virgen de Guadalupe", "fecha": "12" },
+        { "nombre": "Navidad", "fecha": "25" }
+    ]
+};
+
 //section - calendar//
 function generateCalendar() {
     const today = new Date();
@@ -72,6 +111,7 @@ function generateCalendar() {
 
     const calendarContainer = document.getElementById("calendar-container");
     calendarContainer.innerHTML = '';
+
     for (let month = 0; month < 12; month++) {
         const monthDiv = document.createElement("div");
         monthDiv.className = "calendar";
@@ -91,7 +131,6 @@ function generateCalendar() {
             if (index === 5 || index === 6) {
                 th.classList.add("weekend-header");
             }
-
             headerRow.appendChild(th);
         });
         thead.appendChild(headerRow);
@@ -104,24 +143,25 @@ function generateCalendar() {
         for (let i = 0; i < firstDay; i++) {
             row.appendChild(document.createElement("td"));
         }
+        const festivosMes = diasFestivosMexico[monthNames[month].toLowerCase()];
 
         for (let day = 1; day <= daysInMonth; day++) {
             const cell = document.createElement("td");
             cell.textContent = day;
-
             const date = new Date(year, month, day);
             const dayOfWeek = date.getDay();
-
             if (year === today.getFullYear() && month === currentMonth && day === currentDate) {
                 cell.classList.add("highlight-today");
             }
-
             if (dayOfWeek === 6 || dayOfWeek === 0) {
                 cell.classList.add("weekend-day");
             }
+            if (festivosMes && festivosMes.some(f => f.fecha === day.toString())) {
+                cell.classList.add("holiday");
+                cell.title = festivosMes.find(f => f.fecha === day.toString()).nombre; // Tooltip con el nombre del festivo
+            }
 
             row.appendChild(cell);
-
             if ((firstDay + day) % 7 === 0) {
                 tbody.appendChild(row);
                 row = document.createElement("tr");
@@ -137,6 +177,7 @@ function generateCalendar() {
         calendarContainer.appendChild(monthDiv);
     }
 }
+
 window.onload = generateCalendar;
 
 
@@ -158,5 +199,24 @@ document.addEventListener("DOMContentLoaded", function()
         } else {
             localStorage.removeItem('dark-theme');
         }
+    });
+});
+
+document.querySelectorAll('.menu li').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        const icon = item.querySelector('i');
+        icon.classList.add('bx-fade-up'); 
+    });
+
+    item.addEventListener('mouseout', () => {
+        const icon = item.querySelector('i');
+        icon.classList.remove('bx-fade-up'); 
+    });
+
+    item.addEventListener('click', () => {
+        document.querySelectorAll('.menu li').forEach(li => {
+            li.classList.remove('active');
+        });
+        item.classList.add('active');
     });
 });

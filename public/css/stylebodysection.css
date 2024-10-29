@@ -53,7 +53,7 @@
     color: #7d3c98;
 }
  /***** End horaEstacionalDropdown *****/
-
+ 
 /* Estilos para los calendarios */
 .container-calendar {
     display: grid;
@@ -114,4 +114,31 @@
 .weekend-header {
     background-color: #d8b2d8;
     color: #fff;
+}
+
+.holiday 
+{
+    background-color: #7d3c98; 
+    color: #fff; 
+    font-weight: bold; 
+}
+
+
+.card
+{
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #f7eded;
+}
+
+#solicitar
+{
+    background-color: #1e94f5;
+    border: none;
+    box-shadow: none;
+}
+
+#solicitar:hover
+{
+    color: #1e94f5;
+    background-color: #fff;
 }

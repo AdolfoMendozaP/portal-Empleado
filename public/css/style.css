@@ -107,6 +107,7 @@ body.dark-theme .menu li.active
 }
  /***** End Dark Theme *****/
 
+ /***** Camera Banner *****/  
  .camerabanner
  {
      background-color: #7d3c98;
@@ -140,6 +141,7 @@ body.dark-theme .menu li.active
 {
     color: #7d3c98;
 }
+/***** End Camera Banner *****/
 
 footer 
 {

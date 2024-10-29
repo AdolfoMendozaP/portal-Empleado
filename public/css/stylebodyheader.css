@@ -1,8 +1,24 @@
+/*StyleBodyHeader*/
 /***** Header *****/ 
+@keyframes gradientAnimation 
+{
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .container-fluid.bg-primary 
 {
-    background: linear-gradient(to right, #1e94f5, #bc96f1, #cb7dea);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    background: linear-gradient(to right, #1e94f5, #71CBF2, #bc96f1, #cb7dea, #ae4ed7);
+    background-size: 300% 300%;
+    animation: gradientAnimation 15s ease infinite;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .no-bold 
@@ -42,6 +58,7 @@
     cursor: pointer; 
     transition: background-color 0.5s ease;
     border: none;
+    box-shadow: none;
 }
 
 .dropdown-toggle::after
@@ -66,6 +83,10 @@
     color: #7d3c98; 
 }
 
+#marcar
+{
+    cursor: pointer;
+}
 /***** End Notification*****/
 
 
@@ -87,7 +108,8 @@
 {
     transition: opacity 0.3s ease, transform 0.3s ease;
     margin-right: 10px;
-    opacity: 1; 
+    opacity: 1;
+    font-size: 20px; 
 }
 
 #modalbutton .text 
@@ -125,7 +147,7 @@
 {
     position: relative;
     border: none;
-    box-shadow: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card-icon 
