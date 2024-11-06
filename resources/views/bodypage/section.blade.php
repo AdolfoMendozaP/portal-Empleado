@@ -2,10 +2,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h2>{{ request()->is('dashboard') ? 'Dashboard' : 'Sección' }}</h2>
+            <h2>Sección</h2>
         </div>
-        
-        @if (request()->is('/'))
         <div class="col-md-6 text-md-end">
             <div class="btn-group dropstart">
                 <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false" type="button" id="horaEstacionalDropdown">
@@ -34,10 +32,7 @@
                 @include('modalpage.modalAu')
             </div>
         </div>
-        @endif
     </div>
-
-    @if (request()->is('/'))
     <div class="row mt-4">
         <div class="col-md-3">
             <p class="info-text">Lorem</p>
@@ -56,9 +51,5 @@
             <p class="info-number">0</p>
         </div>
     </div>
-    @endif
 </div>
-
-@if (request()->is('/'))
 <div class="container-calendar" id="calendar-container"></div>
-@endif

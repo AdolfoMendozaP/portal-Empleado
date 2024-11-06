@@ -9,7 +9,7 @@
         </div>
         <ul class="menu">
         @if(request()->is('dashboard') || request()->is('adminpages/registros'))
-        <li class="{{ request()->is('/') ? 'active' : '' }}">
+        <li class="active">
             <a href="{{ url('/dashboard') }}">
                 <div class="menu-item">
                     <i class="fa-solid fa-home fa-lg"></i>
@@ -17,7 +17,7 @@
                 </div>
             </a>
         </li>
-        <li class="{{ request()->is('adminpages/registros') ? 'active' : '' }}">
+        <li>
             <a href="{{ route('admin.registros.index') }}">
                 <div class="menu-item">
                     <i class="fa-solid fa-database fa-lg"></i>
@@ -25,16 +25,16 @@
                 </div>
             </a>
         </li>
-        <li class="{{ request()->is('asistencia') ? 'active' : '' }}">
-            <a href="#">
+        <li>
+            <a href="{{ route('admin.asistencia.index') }}">
                 <div class="menu-item">
                     <i class="fa-solid fa-table fa-lg"></i>
                     <span class="small-text">Asistencia</span>
                 </div>
             </a>
         </li>
-        <li class="{{ request()->is('estadisticas') ? 'active' : '' }}">
-            <a href="#">
+        <li>
+            <a href="{{ route('admin.estadistica.index') }}">
                 <div class="menu-item">
                     <i class="fa-solid fa-chart-column fa-lg"></i>
                     <span class="small-text">Estadística</span>
