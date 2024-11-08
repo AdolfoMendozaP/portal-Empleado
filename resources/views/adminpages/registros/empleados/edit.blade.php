@@ -20,7 +20,15 @@
   </select>
 </div>
 <div class="input-group mb-3">
+  <label class="input-group-text"><i class="fa-brands fa-font-awesome"></i></label>
+  <select class="form-select">
+    <option selected disabled readonly>Status</option>
+    <option>...</option>
+  </select>
+</div>
+<div class="input-group mb-3">
   <label class="input-group-text"><i class="fa-solid fa-camera"></i></label>
   <input type="file" class="form-control">
 </div>
 </form>
+
