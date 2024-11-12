@@ -21,7 +21,6 @@ Route::get('/dashboard', function () {
 Route::get('/admin/registros', [RegistrosController::class, 'index'])->name('admin.registros.index');
 Route::get('/admin/registros/empleados', [RegistrosController::class, 'index'])->name('admin.registros.empleados.index');
 Route::get('/admin/registros/usuario', [RegistrosController::class, 'index'])->name('admin.registros.usuario.index');
-Route::get('/admin/registros/personal', [RegistrosController::class, 'index'])->name('admin.registros.personal.index');
 
 
 Route::get('/admin/asistencia', [AsistenciaController::class, 'index'])->name('admin.asistencia.index');

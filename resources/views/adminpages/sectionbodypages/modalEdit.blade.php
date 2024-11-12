@@ -1,9 +1,9 @@
 <div class="modal-content">
     <div class="modal-header">
     <h1 class="modal-title fs-5" id="staticBackdropLabel">
-            @if(request()->is('admin/registros/empleados*'))
+            @if(request()->is('admin/registros/empleados'))
                 Editar Empleado
-            @elseif(request()->is('admin/registros/usuario*'))
+            @elseif(request()->is('admin/registros/usuario'))
                 Editar Usuario
             @endif
         </h1>

@@ -46,13 +46,13 @@
     </div>
 </div>
 @if(request()->is('admin/registros') || request()->is('admin/registros/empleados') || request()->is('admin/registros/usuario') || request()->is('admin/asistencia'))
+            <button class="btn btn-info"><i class="fas fa-id-card-alt"></i></button>
             <button class="btn btn-success"><i class="fa-solid fa-file-excel"></i></button>
             <button class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i></button>
         </div>
     <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" 
-            placeholder="
-                @if(request()->is('admin/registros/empleados'))
+            placeholder="@if(request()->is('admin/registros/empleados'))
                 Buscar Empleados
                 @elseif(request()->is('admin/registros/usuario'))
                 Buscar Usuarios
@@ -60,8 +60,7 @@
                 Buscar Asistencia
                 @else
                 Buscar
-                @endif
-            " style="width: 60%;">
+                @endif" style="width: 60%;">
         <button class="btn btn-info" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 @endif

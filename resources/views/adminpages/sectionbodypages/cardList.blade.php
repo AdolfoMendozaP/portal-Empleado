@@ -38,7 +38,7 @@
                     <td>Marketing</td>
                     <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"><i class="fa-solid fa-eye"></i></button>
                     <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
+                    <div class="modal-dialog modal-lg modal-dialog-scrollable">
           @include('adminpages.sectionbodypages.modalView')
   </div>
 </div></td>
